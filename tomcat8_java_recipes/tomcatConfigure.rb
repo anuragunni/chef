@@ -4,7 +4,7 @@ end
 
 execute 'copying web.xml' do
 	command	"sudo cp web.xml /usr/local/tomcat/apache-tomcat-8.0.36/conf/web.xml"
-do
+end
 
 execute 'copying context.xml' do
 	command	"sudo cp context.xml /usr/local/tomcat/apache-tomcat-8.0.36/conf/context.xml"
