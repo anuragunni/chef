@@ -1,4 +1,4 @@
-
+#update and upgrade the ubuntu system before installing any software
 execute 'update' do
 	command "sudo apt-get update"
 end
