@@ -27,6 +27,14 @@ execute 'unzip tar file' do
                  else
                         mkdir /usr/local/tomcat
                  fi
-                 tar -xvzf apache-tomcat-8.0.36.tar.gz
-                 sudo mv apache-tomcat-8.0.36 /usr/local/tomcat/ "
+                 if [ -d apache-tomcat-8.0.36 ]
+                 	then break
+                 else
+                 	tar -xvzf apache-tomcat-8.0.36.tar.gz
+                 fi
+                 if [ -d '/usr/local/tomcat/apache-tomcat-8.0.36' ]
+                 	then break
+                 else
+                 	sudo mv apache-tomcat-8.0.36 /usr/local/tomcat/
+                 fi"
 end
