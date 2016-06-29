@@ -1,0 +1,3 @@
+execute 'stop haproxy' do
+    command "sudo service haproxy stop"
+end
