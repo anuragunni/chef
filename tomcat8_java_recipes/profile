@@ -28,4 +28,6 @@ if [ -d /etc/profile.d ]; then
   done
   unset i
 fi
-export JAVA_HOME=/usr/local/java/jdk1.8.0_91
+
+export JAVA_HOME=/usr/local/java/jdk1.8.0_92
+export PATH=$JAVA_HOME/bin:$PATH
