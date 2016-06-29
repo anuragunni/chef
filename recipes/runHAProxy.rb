@@ -11,6 +11,4 @@ execute 'start haproxy' do
 	command "sudo /etc/init.d/haproxy start"
 end
 
-execute 'restart haproxy' do
-	command "sudo service haproxy restart"
-end
+
