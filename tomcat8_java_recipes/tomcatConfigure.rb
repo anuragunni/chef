@@ -1,4 +1,6 @@
 #!/bin/sh
+
+#Download tomcat tar file from http://www.tomcat.org
 execute 'tomcat tar file' do
         command "
                  if [ -f 'apache-tomcat-8.0.36.tar.gz' ]
@@ -8,6 +10,7 @@ execute 'tomcat tar file' do
                  fi"
 end
 
+#unzip the tar file and move it to /usr/local/tomcat directory
 execute 'unzip tar file' do
         command "
                  if [ -d '/usr/local/tomcat' ]
@@ -27,6 +30,7 @@ execute 'unzip tar file' do
                  fi"
 end
 
+#copy context.xml, web.xml, tomcat-users.xml, server.xml to the respective directories
 execute 'copying server.xml' do
 	command "sudo cp server.xml /usr/local/tomcat/apache-tomcat-8.0.36/conf/server.xml"
 end
@@ -43,10 +47,12 @@ execute 'copying tomcat-users.xml' do
 	command	"sudo cp tomcat-users.xml /usr/local/tomcat/apache-tomcat-8.0.36/conf/tomcat-users.xml"
 end
 
+#setup tomcat8 to run ./catalina.sh and ./shutdown.sh
 execute 'set up to service tomcat8' do
 	command	"sudo cp tomcat8 /etc/init.d/tomcat8"
 end
 
+#Start the tomcat server
 execute 'start tomcat' do
 	command "sudo service tomcat8 start"
 end
