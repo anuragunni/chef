@@ -6,7 +6,7 @@ execute 'tomcat tar file' do
                  if [ -f 'apache-tomcat-8.0.36.tar.gz' ]
                         then break
                  else
-                        wget http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0$
+                        wget http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.36/bin/apache-tomcat-8.0.36.tar.gz
                  fi"
 end
 
