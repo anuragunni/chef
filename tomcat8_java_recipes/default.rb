@@ -7,7 +7,7 @@ execute 'upgrade' do
 	command "sudo apt-get upgrade -y"
 end
 
-execute 'install git and ant' do
-	command "sudo apt-get install git ant -y"
+execute 'install ant' do
+	command "sudo apt-get install ant -y"
 end
 
