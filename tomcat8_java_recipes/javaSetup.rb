@@ -20,12 +20,7 @@ execute 'unzip java' do
                  else
                         tar -xvzf jdk-8u92-linux-x64.tar.gz
                  fi
-                 cd /usr/local/java/
-                 if [ -d 'jdk1.8.0_92' ]
-                        then break
-                 else
-                        mv ~/chef/tomcat8_java_recipes/jdk1.8.0_92 .
-                 fi"
+                 mv jdk1.8.0_92 /usr/local/java/
 end
 
 execute 'inform ubuntu to use this jdk' do
@@ -42,7 +37,7 @@ execute 'adding java variable' do
         command "sudo cp profile /etc/profile"
 end
 
-#rerun configuration file
+#Rerun configuration file
 execute 'rerunning /etc/profile'
         command "source /etc/profile"
 end
